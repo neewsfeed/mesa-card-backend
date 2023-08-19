@@ -39,11 +39,13 @@ $ node .
 > ImaginaryIssuer -> Card Issuer <br>
 > ii01 -> Alias, usualy initials of issuer and for example, because this was the first card issued by the issuer, I used 01 after it. <br>
 > Returns: Card Info <br>
+
 `/get-value/:cardAlias` <br>
 > This endpoint gets how much currency an card has, using the alias. <br>
 > Usage example: `/get-value/ii01` <br>
 > ii01 -> The alias of the card <br>
 > Returns -> Card Currency Amount, Card Alias <br>
+
 `/update-value/:cardAlias/:newValue` <br>
 > Updates the amount of currency a card has <br>
 > Example usage: `/update-value/ii01/USD20` <br>
