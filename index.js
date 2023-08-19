@@ -36,14 +36,12 @@ app.get('/create-card/:suffix/:delimiter/:pinDelimiter/:currency/:cardValue/:car
 
     const finalCard = cardMap[cardMap.length - 1].split('!');
 
-    db.exec(`INSERT INTO cards VALUES ("${finalCard[0]}","${finalCard[1]}","${finalCard[2]}", "${finalCard[3]}")`)
+    db.exec('INSERT INTO cards VALUES (?, ?, ?, ?)', [finalCard[0], finalCard[1], finalCard[2], finalCard[3]]);
 
     cardMap = cardMap.pop()
 
-    // Get the IP of the client
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress; // replaced req.connection -> req.socket due to req.connection deprecation
 
-    // Log the IP and the card alias
     fs.writeFileSync('mesa.db.log', `${ip} - Created ${finalCard}\n`, (err) => {
         if (err) throw err;
     });
@@ -54,10 +52,8 @@ app.get('/create-card/:suffix/:delimiter/:pinDelimiter/:currency/:cardValue/:car
 
 app.get('/get-value/:cardAlias', async (req, res) => {
     try {
-        // Get card alias
         var cardAlias = req.params.cardAlias;
 
-        // Get card value
         const cardValueResult = await db.get('SELECT value FROM cards WHERE alias = ?', [cardAlias]);
         
         if (cardValueResult) {
@@ -74,12 +70,10 @@ app.get('/get-value/:cardAlias', async (req, res) => {
 
 app.get('/update-value/:cardAlias/:newValue', async (req, res) => {
     try {
-        // Get card alias and new value from the request parameters
         const cardAlias = req.params.cardAlias;
         const newValue = req.params.newValue;
 
-        // Update card value in the database
-        await db.exec(`UPDATE cards SET value = "${newValue}" WHERE alias = "${cardAlias}"`);
+        await db.exec(`UPDATE cards SET value = "?" WHERE alias = "?"`, [newValue, cardAlias]);
 
         res.send(`Card value for alias "${cardAlias}" updated to ${newValue}`);
     } catch (error) {
