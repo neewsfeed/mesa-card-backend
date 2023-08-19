@@ -16,7 +16,7 @@ $ cd mesa-card-backend
 ```
 > 3. Install the dependencies needed
 ```
-$ npm i
+$ npm install --save
 ```
 > 4. Run the initialization script
 ```
