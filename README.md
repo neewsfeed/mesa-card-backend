@@ -27,25 +27,25 @@ $ node init.js
 $ node .
 ```
 
-# Endpoints
-`/create-card/:suffix/:delimiter/:pinDelimiter/:currency/:cardValue/:cardHolder/:cardIssuer/:alias`
-> This endpoint exists to create a new card, for example, to create a new card you can use: `/create-card/MESA/setThisAsDot/!/USD/10/xkks/ImaginaryIssuer/ii01`
-> MESA -> Suffix of the card
-> setThisAsDot -> Returns ., In case of any other delimiter that is needed, we can use ! or MESAISVERYCOOL
-> ! -> Used later to split the string so it can be parsed to the database easier, I recommend always using this.
-> USD -> The currency
-> 10 -> Amount of said currency
-> xkks -> Card holder
-> ImaginaryIssuer -> Card Issuer
-> ii01 -> Alias, usualy initials of issuer and for example, because this was the first card issued by the issuer, I used 01 after it.
-> Returns: Card Info
-`/get-value/:cardAlias`
-> This endpoint gets how much currency an card has, using the alias.
-> Usage example: `/get-value/ii01`
-> ii01 -> The alias of the card
-> Returns -> Card Currency Amount, Card Alias
-`/update-value/:cardAlias/:newValue`
-> Updates the amount of currency a card has
-> Example usage: `/update-value/ii01/USD20`
-> ii01 -> Card Alias
-> USD20 -> New amount of currency
+# Endpoints <br>
+`/create-card/:suffix/:delimiter/:pinDelimiter/:currency/:cardValue/:cardHolder/:cardIssuer/:alias` <br>
+> This endpoint exists to create a new card, for example, to create a new card you can use: `/create-card/MESA/setThisAsDot/!/USD/10/xkks/ImaginaryIssuer/ii01` <br>
+> MESA -> Suffix of the card <br>
+> setThisAsDot -> Returns ., In case of any other delimiter that is needed, we can use ! or MESAISVERYCOOL <br>
+> ! -> Used later to split the string so it can be parsed to the database easier, I recommend always using this. <br>
+> USD -> The currency <br>
+> 10 -> Amount of said currency <br>
+> xkks -> Card holder <br>
+> ImaginaryIssuer -> Card Issuer <br>
+> ii01 -> Alias, usualy initials of issuer and for example, because this was the first card issued by the issuer, I used 01 after it. <br>
+> Returns: Card Info <br>
+`/get-value/:cardAlias` <br>
+> This endpoint gets how much currency an card has, using the alias. <br>
+> Usage example: `/get-value/ii01` <br>
+> ii01 -> The alias of the card <br>
+> Returns -> Card Currency Amount, Card Alias <br>
+`/update-value/:cardAlias/:newValue` <br>
+> Updates the amount of currency a card has <br>
+> Example usage: `/update-value/ii01/USD20` <br>
+> ii01 -> Card Alias <br>
+> USD20 -> New amount of currency <br>
