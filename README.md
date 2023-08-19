@@ -6,7 +6,7 @@
 ![Static Badge](https://img.shields.io/badge/Production%20Ready-green?style=for-the-badge)
 
 # Installation
-> 1. Download the repository localy
+> 1. Download the repository locally
 ```
 $ git https://github.com/xkks-dot-peach/mesa-card-backend.git
 ```
