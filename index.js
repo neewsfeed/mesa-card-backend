@@ -41,7 +41,7 @@ app.get('/create-card/:suffix/:delimiter/:pinDelimiter/:currency/:cardValue/:car
     cardMap = cardMap.pop()
 
     // Get the IP of the client
-    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress; // replaced req.connection -> req.socket due to req.connection deprecation
 
     // Log the IP and the card alias
     fs.writeFileSync('mesa.db.log', `${ip} - Created ${finalCard}\n`, (err) => {
