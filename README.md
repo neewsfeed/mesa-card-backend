@@ -5,7 +5,7 @@
 ![Static Badge](https://img.shields.io/badge/Made_for-NPM_9.8.0-purple?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/Production%20Ready-green?style=for-the-badge)
 
-# Instalation
+# Installation
 > 1. Download the repository localy
 ```
 $ git https://github.com/xkks-dot-peach/mesa-card-backend.git
