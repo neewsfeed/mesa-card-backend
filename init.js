@@ -1,6 +1,8 @@
 import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
 
+var db;
+
 (async () => {
     db = await open({
         filename: './mesa.db',
