@@ -9,7 +9,7 @@
 # Installation
 > 1. Download the repository locally
 ```
-$ git clone https://github.com/xkks-dot-peach/mesa-card-backend.git
+$ git clone https://github.com/neewsfeed/mesa-card-backend.git
 ```
 > 2. Change directory to the `mesa-card-backend` folder
 ```
