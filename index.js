@@ -68,10 +68,18 @@ app.get('/get-value/:cardAlias', async (req, res) => {
     }
 });
 
-app.get('/update-value/:cardAlias/:newValue', async (req, res) => {
+app.get('/update-value/:cardAlias/:pin/:newValue', async (req, res) => {
     try {
         const cardAlias = req.params.cardAlias;
         const newValue = req.params.newValue;
+        const pin = req.params.pin;
+
+        // Check if pin is correct
+        const pinResult = await db.get('SELECT pin FROM cards WHERE alias = ?', [cardAlias]);
+        if (pinResult.pin != pin) {
+            res.status(401).send('Incorrect pin');
+            return;
+        }
 
         await db.exec(`UPDATE cards SET value = "?" WHERE alias = "?"`, [newValue, cardAlias]);
 
