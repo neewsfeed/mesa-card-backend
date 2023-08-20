@@ -1,5 +1,5 @@
 # MesaCard Backend
-> A paysafecard inspired backend
+> A paysafecard inspired backend. FRONT-END: https://github.com/xkks-dot-peach/mesa-card-frontend
 
 ![Static Badge](https://img.shields.io/badge/Made_for-Node.js%20v20.5.1-blue?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/Made_for-NPM_9.8.0-purple?style=for-the-badge)
